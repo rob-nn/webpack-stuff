@@ -8,6 +8,8 @@ import {getProfiles} from '../utils/profileApi.js'
 import ComponentEvents from './ComponentEvents.jsx'
 import Content from './Content.jsx'
 import HOC from './HOC.jsx'
+import MyPropComponent from './MyPropComponent.jsx'
+import FindNode from './FindNode.jsx'
 
 let MyComponent = props => <p>My Component!</p>
 
@@ -43,22 +45,25 @@ export default class App extends React.Component {
 		let profiles = this.state.profiles.map(profile=> {
 			return (
 				<Profile 
+					key={profile.id}
 					name={profile.name}
-					age= {profile.age}
-					bio= {profile.bio}
-					hobbies = {profile.hobbies}
+					age={profile.age}
+					bio={profile.bio}
+					hobbies={profile.hobbies}
 				/>
 			)
 		})
 		return (
 			<div>
-				<HOC/>
-				<ComponentEvents />
-				<Content>This is my content<MyComponent/></Content>
-				<MyComponent />
+				<FindNode key={'FindNode'}/>
+				<MyPropComponent name={'my prop'} count={4} key={'MyPropComponent'}/>
+				<HOC key={'HOC'}/>
+				<ComponentEvents key={'ComponentEvents'}/>
+				<Content key={'Content'}>This is my content<MyComponent key={'MyComponent2'}/></Content>
+				<MyComponent key={'MyComponent3'/>
 				<h1>Profiles</h1>
 				{profiles}
-				<AddProfile addUser={this.addProfile} />
+				<AddProfile addUser={this.addProfile} key={'AddProfile'}/>
 			</div>
 		)
 	}
