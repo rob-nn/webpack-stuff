@@ -1,0 +1,6 @@
+1. React components important envents:
+	componentsDisMount
+	componentsWillMount
+	componentsWillReceiveProps
+	componentsWillReceiveStates
+	componentsShouldUpdate

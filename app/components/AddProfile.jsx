@@ -5,10 +5,10 @@ export default class AddProfile extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			name : 'a', 
-			age : 'b', 
-			bio : 'c', 
-			hobby: 'd' 
+			name : '', 
+			age : '', 
+			bio : '', 
+			hobby: '' 
 		}
 
 		this.handleName = this.handleName.bind(this)

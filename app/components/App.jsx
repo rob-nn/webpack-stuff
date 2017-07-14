@@ -5,6 +5,9 @@ import ReactDOM from 'react-dom';
 import Profile from './Profile.jsx'
 import AddProfile from './AddProfile.jsx'
 import {getProfiles} from '../utils/profileApi.js'
+import ComponentEvents from './ComponentEvents.jsx'
+import Content from './Content.jsx'
+import HOC from './HOC.jsx'
 
 let MyComponent = props => <p>My Component!</p>
 
@@ -22,6 +25,9 @@ export default class App extends React.Component {
 				profiles: this.state.profiles.concat([newUser])
 			}
 		)
+	}
+
+	componentWillMount() {
 	}
 
 	componentDidMount() {
@@ -46,6 +52,9 @@ export default class App extends React.Component {
 		})
 		return (
 			<div>
+				<HOC/>
+				<ComponentEvents />
+				<Content>This is my content<MyComponent/></Content>
 				<MyComponent />
 				<h1>Profiles</h1>
 				{profiles}
