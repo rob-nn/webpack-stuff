@@ -12,7 +12,9 @@ class App extends React.Component {
 			count:0
 		}
 		this.increment = this.increment.bind(this)
+		this._onChange = this._onChange.bind(this)
 	}
+
 	componentDidMount() {
 		TodoStore.addChangeListener(this._onChange)
 	}
@@ -20,9 +22,11 @@ class App extends React.Component {
 		TodoStore.removeChangeListener(this._onChange)
 	}
 	_onChange() {
+		console.log(`1 - Count: ${this.state.count}`)
 		this.setState({
 			count: TodoStore.getCount()
 		})
+		console.log(`2 - Count: ${this.state.count}`)
 	}
 
 	increment () {
