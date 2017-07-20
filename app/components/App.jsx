@@ -55,12 +55,11 @@ export default class App extends React.Component {
 		})
 		return (
 			<div>
+				<MyPropComponent name={'my prop'} count={4} /> 
 				<FindNode key={'FindNode'}/>
-				<MyPropComponent name={'my prop'} count={4} key={'MyPropComponent'}/>
 				<HOC key={'HOC'}/>
 				<ComponentEvents key={'ComponentEvents'}/>
 				<Content key={'Content'}>This is my content<MyComponent key={'MyComponent2'}/></Content>
-				<MyComponent key={'MyComponent3'/>
 				<h1>Profiles</h1>
 				{profiles}
 				<AddProfile addUser={this.addProfile} key={'AddProfile'}/>

@@ -4,8 +4,9 @@ import ReactDOM from 'react-dom'
 import constants from './constants/app-constants.js'
 import {incrementActions} from './actions/app-actions.js'
 import {TodoStore} from './stores/count-store.js'
+import Patient from './components/patient.jsx'
 
-class App extends React.Component {
+class CountApp extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -40,6 +41,22 @@ class App extends React.Component {
 			</div>
 		)
 	}
+}
+
+class App extends React.Component {
+	constructor(props) {
+		super(props)
+	}
+
+	render () {
+		return (
+			<div>
+				<CountApp />
+				<Patient />
+			</div>
+		)
+	}
+
 }
 
 ReactDOM.render(<App />, document.getElementById('app')) 
